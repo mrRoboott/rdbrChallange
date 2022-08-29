@@ -6,3 +6,25 @@
 body {
   font-family: 'HelveticaNeue';
 }
+
+.homeButtons {
+  background-color: #62A1EB;
+  border: none;
+  color: white;
+  padding: 18px 60px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+  width: 387px;
+}
+
+ul {
+  display: inline-block;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}

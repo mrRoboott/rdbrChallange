@@ -10,6 +10,11 @@ function App() {
       <img id='logo' src={logo} alt="redberryLogo" /> 
       <img  src={homeImage} alt="welcome to homePage" />
 
+      <ul>
+        <li className='addRecord'><a href="" className='homeButtons'> ჩანაწერის დამატება </a></li>
+        <li><a href="" className='homeButtons'> ჩანაწერების სია </a></li>
+      </ul>
+      
       </div>
         
       
