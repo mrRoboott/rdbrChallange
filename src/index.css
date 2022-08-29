@@ -28,3 +28,12 @@ ul {
 li {
   list-style: none;
 }
+
+.addRecord {
+  margin-top: 123px;
+  margin-bottom: 26px;
+}
+
+#logo {
+  margin-bottom: 85px;
+}
