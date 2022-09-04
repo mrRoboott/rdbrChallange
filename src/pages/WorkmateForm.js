@@ -1,5 +1,38 @@
+import { useState, useEffect } from "react";
 const WorkmateForm = () => {
-    
+
+const [teams, setTeams] = useState(null);
+const [positions, setPositions] = useState(null);
+const [filteredPositions, setFilteredPositions] = useState(null);
+
+    useEffect(()=>{
+
+    // fetching teams
+      const teamsApi = async ()=>{
+        const res = await fetch('https://pcfy.redberryinternship.ge/api/teams');
+        const teams = await res.json();
+        setTeams(teams.data);
+        // console.log(teams.data);
+      }
+      teamsApi();
+
+   // fetching positions
+  const positionsApi = async ()=>{
+    const resPositions = await fetch('https://pcfy.redberryinternship.ge/api/positions');
+    const positions = await resPositions.json();
+    setPositions(positions.data);
+    // console.log('positions: ',positions.data);
+  }
+  positionsApi(); 
+
+    }, [])
+
+    const handleChange = (event)=>{
+        // console.log(event.target.value);
+        setFilteredPositions( positions.filter((position) =>  position.team_id == event.target.value ) ); 
+        // positions.map((position)=>console.log(position));
+      }
+
     return ( 
         <form className="workmate-form">
             <div className="form-element">
@@ -15,8 +48,22 @@ const WorkmateForm = () => {
                     <span className="hint">მინიმუმ 2 სიმბოლო, ქართული ასოები</span>
                 </div>
             </div>
-            <select name="" id="" ><option  value="">თიმი</option></select> 
-            <select name="" id="" ><option  value="">პოზიცია</option></select>
+
+            <select name="" id="" onChange={ (event)=>{handleChange(event)} }>
+                <option  value="" disabled selected hidden>თიმი</option>
+                {/* displaying teams from api */}
+                {teams && teams.map((team)=>(
+                    <option key={team.id} value={team.id}>{team.name}</option>
+                ))}
+                </select> 
+
+            <select name="" id="" >
+                <option  value="" disabled selected hidden>პოზიცია</option>
+                {/* displaying fillteredPositions */}
+                {filteredPositions && filteredPositions.map((position)=>(
+                    <option key={position.id} value={position.id}>{position.name}</option>
+                ))}
+                </select>
 
             <div className="form-element mail">
                 <label htmlFor="email" >მეილი</label>
