@@ -1,3 +1,7 @@
+* {
+  box-sizing: border-box;
+}
+
 @font-face {
   font-family: 'HelveticaNeue';
   src: url('./fonts/HelveticaNeue.ttc');
@@ -43,4 +47,66 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.workmate-form {
+  max-width: 600px;
+  border: 2px solid #277ee0;
+  margin: 25px auto;
+  padding: 2rem;
+}
+
+label, select, #next {
+  display: block;
+  font-weight:600;
+}
+.names-block {
+  display: inline-block;
+  width: 47%;
+}
+
+input, select {
+  border: 1px solid #8AC0E2;
+  height: 2rem;
+}
+
+.hint {
+  font-size: 10px;
+  font-weight: lighter;
+}
+
+input, select {
+  width: 100%;
+  border-radius: 5px;
+}
+
+label {
+ padding: .5rem 0;
+}
+
+select {
+  margin-bottom: 1.5rem;
+  background-color: #EBEBEB;
+}
+
+.form-element {
+  margin-bottom: 2.5rem;
+}
+
+.lastname {
+  margin-left: 6%;
+}
+
+#nextbtn {
+  background-color: #62A1EB;
+  color: whitesmoke;
+  border: 0px;
+  border-radius: 5px;
+  padding: 11px 33px;
+  cursor: pointer;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: right;
 }
